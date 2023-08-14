@@ -11,14 +11,17 @@ public class Task2SelectionSort {
          */
         // (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ WRITE CODE HERE (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
         Integer swap;
+        int min;
         for (int i = 0; i < numbers.size(); i++) {
+            min = i;
             for (int j = i + 1; j < numbers.size(); j++) {
-                if (numbers.get(i) > numbers.get(j)) {
-                    swap = numbers.get(i);
-                    numbers.set(i, numbers.get(j));
-                    numbers.set(j, swap);
+                if (numbers.get(j) < numbers.get(min)) {
+                    min = j;
                 }
             }
+            swap = numbers.get(i);
+            numbers.set(i, numbers.get(min));
+            numbers.set(min, swap);
         }
         return numbers;
     }
