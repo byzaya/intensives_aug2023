@@ -11,13 +11,16 @@ public class Task1BubbleSort {
          */
         // (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ WRITE CODE HERE (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
         Integer swap;
-        for (int i = 0; i < numbers.size(); i++) {
+        boolean isSorted = false;
+        while (!isSorted) {
+            isSorted = true;
             for (int j = 0; j < numbers.size() - 1; j++) {
                 if (numbers.get(j) > numbers.get(j + 1)) {
                     // swap
                     swap = numbers.get(j);
-                    numbers.set(j, numbers.get(j+1));
+                    numbers.set(j, numbers.get(j + 1));
                     numbers.set(j + 1, swap);
+                    isSorted = false;
                 }
             }
         }
